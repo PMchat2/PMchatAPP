@@ -8,17 +8,17 @@ on:
 jobs:
   build-android:
     name: Build for Android
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04          # 固定使用 Ubuntu 22.04，避开 26.04 迁移
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
       - name: Build with Buildozer
-        uses: ArtemSBulgakov/buildozer-action@v1
+        uses: ArtemSBulgakov/buildozer-action@v1.1.3   # 使用包含修复的 1.1.3 版本
         id: buildozer
         with:
-          command: buildozer android debug
+          command: yes | buildozer android debug       # 自动确认所有提示
           buildozer_version: stable
 
       - name: Upload APK
