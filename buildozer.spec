@@ -7,7 +7,7 @@ source.include_exts = py,png,jpg,kv,atlas,pem
 version = 0.1
 
 # ---- 必须列全依赖项，否则构建会失败 ----
-requirements = python3,kivy,requests,urllib3,chardet,idna,certifi,pycryptodome
+requirements = python3==3.11.9,hostpython3==3.11.9,kivy==2.3.1,requests,urllib3,chardet,idna,certifi,pycryptodome
 
 # ---- Android 权限 ----
 android.permissions = INTERNET, ACCESS_NETWORK_STATE
